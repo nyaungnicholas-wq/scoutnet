@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* ScoutNet design system — Tailwind v4 CSS-config (no tailwind.config.js).
+   Sibling identity to LeadNet's emerald: navy/slate with a sky CTA, per the
+   ui-ux-pro-max "sales intelligence dashboard" direction. The stock sky/slate
+   scales are REMAPPED in place so standard utilities (bg-sky-900, text-slate-600)
+   carry the brand with zero class churn. */
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand blue scale — 600 is the CTA blue (#0369a1), 900 the deep navy. */
+  --color-sky-50: #f0f7fc;
+  --color-sky-100: #ddedf8;
+  --color-sky-200: #bcdcf0;
+  --color-sky-300: #8cc3e4;
+  --color-sky-400: #54a3d4;
+  --color-sky-500: #2186c4;
+  --color-sky-600: #0369a1;
+  --color-sky-700: #06547e;
+  --color-sky-800: #0a4364;
+  --color-sky-900: #0d3050;
+  --color-sky-950: #082138;
+
+  /* Warm amber accent for stats and "high impact" badges. */
+  --color-accent-50: #fdf8ec;
+  --color-accent-100: #faedcb;
+  --color-accent-500: #d99a2b;
+  --color-accent-600: #b97d15;
+
+  /* Slate cooled toward blue so neutrals sit naturally next to the navy. */
+  --color-slate-50: #f7f9fb;
+  --color-slate-100: #eef2f6;
+  --color-slate-200: #e1e8ee;
+  --color-slate-300: #cbd6e0;
+  --color-slate-400: #94a5b4;
+  --color-slate-500: #64788a;
+  --color-slate-600: #475b6d;
+  --color-slate-700: #334555;
+  --color-slate-800: #1e2c39;
+  --color-slate-900: #14202b;
+  --color-slate-950: #0b1722;
+
+  --shadow-soft: 0 1px 2px rgb(13 48 80 / 0.05), 0 4px 16px rgb(13 48 80 / 0.07);
+  --shadow-lift: 0 2px 4px rgb(13 48 80 / 0.06), 0 12px 32px rgb(13 48 80 / 0.10);
+
+  --radius-xl: 0.875rem;
+  --radius-2xl: 1.125rem;
+  --radius-3xl: 1.5rem;
+}
+
+:root {
+  --background: #f7f9fb;
+  --foreground: #0b1722;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.018em;
+}
+
+/* The canonical card surface — used directly as a class and inside Card/Stat. */
+.card-soft {
+  background: #fff;
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-soft);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-sky-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

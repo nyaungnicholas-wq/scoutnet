@@ -1,0 +1,1 @@
+ALTER TABLE "leads" ADD COLUMN "contact_first_name" text DEFAULT '' NOT NULL;

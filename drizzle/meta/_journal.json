@@ -1,0 +1,34 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1781393799563,
+      "tag": "0000_scoutnet_init",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1781848525524,
+      "tag": "0001_add_contact_first_name",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1781848600000,
+      "tag": "0002_add_owner_finder",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1782278752048,
+      "tag": "0003_add_contact_evidence",
+      "breakpoints": true
+    }
+  ]
+}

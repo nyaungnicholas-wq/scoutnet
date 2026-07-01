@@ -1,0 +1,1 @@
+ALTER TABLE "leads" ADD COLUMN "contact_evidence" text DEFAULT '' NOT NULL;
