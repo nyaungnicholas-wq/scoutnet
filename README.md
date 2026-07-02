@@ -2,6 +2,11 @@
 
 Built by **[Nicholas Nyaung](https://nicholasnyaung.com)**
 
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+&nbsp;![Next.js 16](https://img.shields.io/badge/Next.js-16-black?logo=nextdotjs&logoColor=white)
+&nbsp;![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
+&nbsp;![Runs with zero config](https://img.shields.io/badge/setup-zero%20config-brightgreen)
+
 A lead-discovery + qualification + outreach agent for web designers, marketers,
 and agencies. The third sibling in the -Net family:
 [LeadNet](../leadnet) **catches** inbound leads, [ReachNet](../reachnet) **sends**
@@ -72,6 +77,18 @@ fill Settings, run a search, and walk the full loop without sending a real email
 To go live: copy `.env.example` → `.env.local`, set `APP_SECRET` + `DATABASE_URL`,
 add your Resend key + verified domain in **Settings**, and (optionally)
 `GOOGLE_PLACES_API_KEY` for the richest discovery data.
+
+## Deploy your own
+
+One click — ScoutNet runs on a single Vercel project plus a serverless Postgres:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/nyaungnicholas-wq/scoutnet&env=APP_SECRET,DATABASE_URL&envDescription=APP_SECRET%20encrypts%20stored%20sender%20keys%3B%20DATABASE_URL%20is%20a%20serverless%20Postgres%20(e.g.%20Neon)&envLink=https://github.com/nyaungnicholas-wq/scoutnet/blob/main/.env.example)
+
+Vercel prompts for the two required secrets. Generate `APP_SECRET` with
+`openssl rand -base64 32`, and create a free Postgres at [Neon](https://neon.tech)
+for `DATABASE_URL`. Everything else (`GOOGLE_PLACES_API_KEY`, Resend, Gmail OAuth,
+cron) is optional and documented in [`.env.example`](.env.example). Migrations run
+automatically on first boot. Prefer local first? See **Quickstart** above.
 
 ## Stack
 
