@@ -145,9 +145,10 @@ export async function tickJobsAction(): Promise<{ active: number; added: number 
 
 /** Save (or clear) the Google Sheet webhook URL the owner pasted in Settings. */
 export async function saveSheetWebhookAction(formData: FormData) {
-  await requireAccount();
+  const account = await requireAccount();
+  const db = await getDb();
   const url = str(formData.get("sheetWebhook"), 400);
-  const result = await setSheetWebhook(url);
+  const result = await setSheetWebhook(db, account.id, url);
   revalidatePath("/dashboard/settings");
   if (!result.ok) {
     redirect("/dashboard/settings?sheetError=" + encodeURIComponent(result.error ?? "Could not save."));
@@ -159,7 +160,7 @@ export async function saveSheetWebhookAction(formData: FormData) {
 export async function syncSheetAction() {
   const account = await requireAccount();
   const db = await getDb();
-  if (!(await sheetConfigured())) {
+  if (!(await sheetConfigured(db, account.id))) {
     redirect("/dashboard/settings?sheetError=" + encodeURIComponent("Connect a sheet first."));
   }
   const r = await pushAllLeads(db, account.id);

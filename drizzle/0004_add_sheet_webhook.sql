@@ -1,0 +1,1 @@
+ALTER TABLE "profiles" ADD COLUMN "sheet_webhook_enc" text;

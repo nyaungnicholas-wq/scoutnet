@@ -75,6 +75,10 @@ export const profiles = pgTable("profiles", {
   accent: text("accent").notNull().default("#0369a1"),
   /** Owner's own Resend key, AES-256-GCM encrypted at rest with APP_SECRET. */
   resendKeyEnc: text("resend_key_enc"),
+  /** This account's Live Google Sheet webhook URL (Apps Script exec URL). Stored
+      per-account and AES-256-GCM encrypted at rest — it's effectively a bearer URL
+      for this tenant's full lead export, so it must never be a shared global value. */
+  sheetWebhookEnc: text("sheet_webhook_enc"),
   /** From address on the owner's own verified domain, e.g. "Dana <dana@myagency.com>". */
   fromAddr: text("from_addr").notNull().default(""),
   /** Reply-to; must be a verified address. Empty = the login email. */

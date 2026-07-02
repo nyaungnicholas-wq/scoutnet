@@ -126,7 +126,7 @@ export default async function SettingsPage({
   const db = await getDb();
   const dev = process.env.NODE_ENV !== "production";
   const hasPlacesKey = Boolean(process.env.GOOGLE_PLACES_API_KEY);
-  const sheetWebhook = await getSheetWebhook();
+  const sheetWebhook = await getSheetWebhook(db, account.id);
 
   const profile = (await db.select().from(profiles).where(eq(profiles.accountId, account.id)))[0];
   const mailbox = await getActiveMailbox(db, account.id);
