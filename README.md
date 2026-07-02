@@ -7,6 +7,8 @@ Built by **[Nicholas Nyaung](https://nicholasnyaung.com)**
 &nbsp;![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?logo=typescript&logoColor=white)
 &nbsp;![Runs with zero config](https://img.shields.io/badge/setup-zero%20config-brightgreen)
 
+![ScoutNet ranks discovered businesses by opportunity, with evidence behind every score and an honest draft ready to send](docs/screenshot-leads.png)
+
 A lead-discovery + qualification + outreach agent for web designers, marketers,
 and agencies. The third sibling in the -Net family:
 [LeadNet](../leadnet) **catches** inbound leads, [ReachNet](../reachnet) **sends**
